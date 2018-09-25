@@ -1,0 +1,14 @@
+version: '2'
+##https://github.com/JetBrains/phpstorm-docker-images/blob/master/docker-compose.yml
+##PhpStorm Docker
+services:
+  webserver:
+    image: phpstorm/php-71-apache-xdebug-26
+    ports:
+    - "80:80"
+    volumes:
+    - ./:/var/www/html
+    environment:
+      #change the line below with your IP address
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+
